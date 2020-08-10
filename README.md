@@ -1,4 +1,6 @@
-# SpecnoOMS
+# Specno-OMS
+
+Angular application that allows users to create and manage office space,
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
 
