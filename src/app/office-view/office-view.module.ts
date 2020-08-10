@@ -14,6 +14,7 @@ import { ViewStaffComponent } from './view-staff/view-staff.component';
   imports: [
     CommonModule,
     OfficeViewRoutingModule
-  ]
+  ],
+  exports: [OfficeViewComponent, CreateStaffComponent, DeleteStaffComponent, UpdateStaffComponent, ViewStaffComponent]
 })
 export class OfficeViewModule { }

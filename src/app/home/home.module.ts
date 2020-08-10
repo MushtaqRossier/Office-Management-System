@@ -11,6 +11,7 @@ import { ViewOfficeComponent } from './view-office/view-office.component';
   declarations: [CreateOfficeComponent, DeleteOfficeComponent, UpdateOfficeComponent, ViewOfficeComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [CreateOfficeComponent, DeleteOfficeComponent, UpdateOfficeComponent, ViewOfficeComponent]
 })
 export class HomeModule { }
