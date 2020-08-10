@@ -1,0 +1,52 @@
+{
+    "officeDetails": [
+        {
+            "Id": "Ae65t",
+            "Name": "Amazon",
+            "Location": "1st floor, Newlink Building, 1 New Street, Paarl, 4696",
+            "Email": "info@amazon.com",
+            "TellNumber": "076 356 5355",
+            "MaxOccupants": 9,
+            "Color": "blue"
+        },
+        {
+            "Id": "Bc75d",
+            "Name": "Google",
+            "Location": "1st floor, Newlink Building, 1 New Street, Paarl, 4696",
+            "Email": "info@google.com",
+            "TellNumber": "076 356 5355",
+            "MaxOccupants": 9,
+            "Color": "blue"
+        },
+        {
+            "Id": "Cb81e",
+            "Name": "Microsoft",
+            "Location": "1st floor, Newlink Building, 1 New Street, Paarl, 4696",
+            "Email": "info@microsoft.com",
+            "TellNumber": "076 356 5355",
+            "MaxOccupants": 9,
+            "Color": "blue"
+        }
+    ],
+
+    "staffDetails": [
+        {
+            "Id": "Ef921",
+            "OfficeId": "Ae65t",
+            "FirstName": "Mushtaq",
+            "LastName": "Rossier"
+        },
+        {
+            "Id": "863Ee",
+            "OfficeId": "Bc75d",
+            "FirstName": "Saarah",
+            "LastName": "Rossier"
+        },
+        {
+            "Id": "2r3uA",
+            "OfficeId": "Cb81e",
+            "FirstName": "Qaasim",
+            "LastName": "Hendricks"
+        }
+    ]
+}
