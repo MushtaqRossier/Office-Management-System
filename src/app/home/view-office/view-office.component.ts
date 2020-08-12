@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OfficeService } from 'src/app/services/office.service';
+import { Home } from 'src/app/models/home-model';
 
 @Component({
   selector: 'app-view-office',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewOfficeComponent implements OnInit {
 
-  constructor() { }
+  homeDetails: Home;
+
+  constructor(private officeService: OfficeService) { }
 
   ngOnInit(): void {
+    this.officeService.getOfficeDataHome().subscribe(data => {
+      this.homeDetails = data;
+    })
   }
 
 }
