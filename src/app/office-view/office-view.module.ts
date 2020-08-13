@@ -10,11 +10,16 @@ import { ViewStaffComponent } from './view-staff/view-staff.component';
 
 
 @NgModule({
-  declarations: [OfficeViewComponent, CreateStaffComponent, DeleteStaffComponent, UpdateStaffComponent, ViewStaffComponent],
+  declarations: [
+    OfficeViewComponent, 
+    CreateStaffComponent, 
+    DeleteStaffComponent, 
+    UpdateStaffComponent, 
+    ViewStaffComponent
+  ],
   imports: [
     CommonModule,
     OfficeViewRoutingModule
-  ],
-  exports: [OfficeViewComponent, CreateStaffComponent, DeleteStaffComponent, UpdateStaffComponent, ViewStaffComponent]
+  ]
 })
 export class OfficeViewModule { }
