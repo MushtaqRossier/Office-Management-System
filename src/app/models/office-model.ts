@@ -1,4 +1,4 @@
-export interface Home {
+export interface Office {
     Id: string;
     Name: string;
     Location: string;

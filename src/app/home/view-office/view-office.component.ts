@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OfficeService } from 'src/app/services/office.service';
-import { Home } from 'src/app/models/home-model';
+import { Office } from 'src/app/models/office-model';
 
 @Component({
   selector: 'app-view-office',
@@ -9,7 +9,7 @@ import { Home } from 'src/app/models/home-model';
 })
 export class ViewOfficeComponent implements OnInit {
 
-  homeDetails: Home;
+  homeDetails: Office;
 
   constructor(private officeService: OfficeService) { }
 
