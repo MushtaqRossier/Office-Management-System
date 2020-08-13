@@ -11,10 +11,25 @@ export class StaffService {
 
   constructor(private _http: HttpClient) { }
 
-  getStaffData(): Observable<Staff> {
+  getStaffData(id): Observable<Staff> {
+    const url = 'http://localhost:3000/staffDetails?OfficeId=';
+    return this._http.get<Staff>(url + id);
+  };
+
+  createStaff(staffBody): Observable<Staff> {
     const url = 'http://localhost:3000/staffDetails';
-    return this._http.get<Staff>(url);
+    return this._http.post<Staff>(url, staffBody);
+  };
+
+  updateStaff(id, staffBody): Observable<Staff> {
+    const url = "http://localhost:3000/staffDetails?Id=";
+    return this._http.put<Staff>(url + id, staffBody);
   }
+
+  deleteStaff(id): Observable<Staff> {
+    const url = "http://localhost:3000/officeDetails?Id=";
+    return this._http.delete<Staff>(url + id);
+  };
 }
 
 

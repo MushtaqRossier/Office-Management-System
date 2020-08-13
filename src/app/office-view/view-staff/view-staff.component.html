@@ -1,19 +1,19 @@
 <!-- Office Details -->
-<div class="ui card">
+<div class="ui card" *ngFor="let office of officeView">
     <div class="content">
       <div class="header ml-auto">
           <button class="ui labeled icon button">
             <i class="left arrow icon"></i>
             Back
           </button>
-          Specno 
+          {{office.Name}} 
         </div>
     </div>
     <div class="content">
-      <h4 class="ui sub header">Location</h4>
-      <h4 class="ui sub header">Email</h4>
-      <h4 class="ui sub header">Office Tel</h4>
-      <h4 class="ui sub header">Max Occupancy</h4>
+      <h4 class="ui sub header">{{office.Location}}</h4>
+      <h4 class="ui sub header">{{office.Email}}</h4>
+      <h4 class="ui sub header">{{office.TellNumber}}</h4>
+      <h4 class="ui sub header">{{office.MaxOccupants}}</h4>
     </div>
 </div>
 
@@ -38,7 +38,7 @@
 
 <!-- Staff List -->
 <div class="ui middle aligned divided list">
-    <div class="item">
+    <div class="item" *ngFor="let staff of staffList">
       <div class="right floated content">
         <button class="ui labeled icon button">
             <i class="edit icon"></i>
@@ -51,41 +51,10 @@
       </div>
       <img class="ui avatar image">
       <div class="content">
-        Lena
+        {{staff.FirstName}} {{staff.LastName}}
       </div>
     </div>
-    <div class="item">
-      <div class="right floated content">
-        <button class="ui labeled icon button">
-            <i class="edit icon"></i>
-            Edit
-          </button>
-          <button class="ui right labeled icon button">
-            <i class="delete icon"></i>
-            Delete
-          </button>
-      </div>
-      <img class="ui avatar image">
-      <div class="content">
-        Lindsay
-      </div>
-    </div>
-    <div class="item">
-      <div class="right floated content">
-        <button class="ui labeled icon button">
-            <i class="edit icon"></i>
-            Edit
-          </button>
-          <button class="ui right labeled icon button">
-            <i class="delete icon"></i>
-            Delete
-          </button>
-      </div>
-      <img class="ui avatar image">
-      <div class="content">
-        Mark
-      </div>
-    </div>
+    
 
 
 

@@ -9,10 +9,10 @@ import { UpdateStaffComponent } from './update-staff/update-staff.component';
 
 const routes: Routes = [
   { path: '', component: OfficeViewComponent },
-  { path: 'create-staff', component: CreateStaffComponent},
-  { path: 'delete-staff', component: DeleteStaffComponent},
-  { path: 'update-staff', component: UpdateStaffComponent},
-  { path: 'view-staff', component: ViewStaffComponent}
+  { path: 'create-staff/:id', component: CreateStaffComponent},
+  { path: 'delete-staff/:id', component: DeleteStaffComponent},
+  { path: 'update-staff/:id', component: UpdateStaffComponent},
+  { path: 'view-staff/:id', component: ViewStaffComponent}
 ];
 
 @NgModule({
