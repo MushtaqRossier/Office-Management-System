@@ -26,13 +26,23 @@
             <h3>
                 <a routerLink="/office/view-staff/{{office.Id}}">{{office.Name}}</a>
             </h3>
+            <div class="ml-auto">
+                <button class="ui labeled icon green button">
+                    <i class="edit icon"></i>
+                    Edit
+                  </button>
+                  <button class="ui right labeled icon red button">
+                    <i class="delete icon"></i>
+                    Delete
+                  </button>
+              </div>
         </div>
         <div class="row pl-4">
             <h4>{{office.Location}}</h4>
         </div>
         <div class="row pl-4">
             <h6>{{office.Email}}</h6>
-            <h6 class="ml-auto pr-2">{{office.TellNumber}}</h6>
+            <h6 class="ml-auto pr-1">{{office.TellNumber}}</h6>
         </div>
       </div>
     </div>
