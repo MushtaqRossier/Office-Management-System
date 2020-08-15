@@ -1,1 +1,35 @@
-<p>create-office works!</p>
+<div class="container mb-5">
+    <form (submit)="addNewOffice(officeForm)" #officeForm="ngForm">
+        <div class="form-group" hidden>
+            <label for="">Id</label>
+            <input type="text" class="form-control" name="officeId" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" class="form-control" name="officeName" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="">Location</label>
+            <input type="text" class="form-control" name="officeLocation" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" class="form-control" name="officeEmail" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="">Tell Number</label>
+            <input type="text" class="form-control" name="officeTellNumber" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="">Max Occupants</label>
+            <input type="text" class="form-control" name="officeMaxOccupants" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="">Color</label>
+            <input type="text" class="form-control" name="officeColor" ngModel>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>

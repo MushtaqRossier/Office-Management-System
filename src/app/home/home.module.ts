@@ -5,6 +5,8 @@ import { CreateOfficeComponent } from './create-office/create-office.component';
 import { DeleteOfficeComponent } from './delete-office/delete-office.component';
 import { UpdateOfficeComponent } from './update-office/update-office.component';
 import { ViewOfficeComponent } from './view-office/view-office.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -12,7 +14,9 @@ import { ViewOfficeComponent } from './view-office/view-office.component';
   declarations: [CreateOfficeComponent, DeleteOfficeComponent, UpdateOfficeComponent, ViewOfficeComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [CreateOfficeComponent, DeleteOfficeComponent, UpdateOfficeComponent, ViewOfficeComponent]
 })

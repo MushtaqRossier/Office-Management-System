@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                <button type="button" class="btn btn-light">Add Office</button>
+                <a [routerLink]="['/create-office']"><button type="button" class="btn btn-light">Add Office</button></a>
             </ul>
         </div>
     </div>
@@ -27,11 +27,11 @@
                 <a routerLink="/office/view-staff/{{office.Id}}">{{office.Name}}</a>
             </h3>
             <div class="ml-auto">
-                <button class="ui labeled icon green button">
+                <button class="ui labeled icon green button" routerLink='/update-office/{{office.Id}}'>
                     <i class="edit icon"></i>
                     Edit
                   </button>
-                  <button class="ui right labeled icon red button">
+                  <button class="ui right labeled icon red button" routerLink='/delete-office/{{office.Id}}'>
                     <i class="delete icon"></i>
                     Delete
                   </button>
