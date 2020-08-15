@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ViewStaffComponent implements OnInit {
 
-  productId = "";
+  officeId = "";
   staffId = "";
   officeView: Office;
   staffList: Staff;
@@ -21,11 +21,11 @@ export class ViewStaffComponent implements OnInit {
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe(data => {
-      this.productId = data.id;
+      this.officeId = data.id;
       this.staffId = data.id;
     });
 
-    this.officeService.viewOffice(this.productId).subscribe(data => {
+    this.officeService.viewOffice(this.officeId).subscribe(data => {
       this.officeView = data;
     })
 

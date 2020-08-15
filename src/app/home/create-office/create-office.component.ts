@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OfficeService} from 'src/app/services/office.service';
-import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,10 +11,9 @@ import { Router } from '@angular/router';
 export class CreateOfficeComponent implements OnInit {
 
   result: string;
-  officeForm: FormGroup;
   form: NgForm;
 
-  constructor(private officeService: OfficeService, private router: Router, private fb: FormBuilder) { }
+  constructor(private officeService: OfficeService, private router: Router) { }
 
   ngOnInit(): void {
     this.result = Math.random().toString(36).substr(2, 5);
@@ -36,6 +35,7 @@ export class CreateOfficeComponent implements OnInit {
     this.officeService.createOffice(officeForm).subscribe(data => {
       console.log(data);
     })
+    console.log(officeForm);
     console.log('Office created!');
     this.router.navigateByUrl('home');
 

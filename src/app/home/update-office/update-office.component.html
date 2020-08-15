@@ -1,1 +1,31 @@
-<p>update-office works!</p>
+<div class="container mb-5">
+    <form (submit)="updateOffice(officeForm)" #officeForm="ngForm">
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" class="form-control" name="officeName" [(ngModel)]="officeView.Name">
+        </div>
+        <div class="form-group">
+            <label for="">Location</label>
+            <input type="text" class="form-control" name="officeLocation" [(ngModel)]="officeView.Location">
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" class="form-control" name="officeEmail" [(ngModel)]="officeView.Email">
+        </div>
+        <div class="form-group">
+            <label for="">Tell Number</label>
+            <input type="text" class="form-control" name="officeTellNumber" [(ngModel)]="officeView.TellNumber">
+        </div>
+        <div class="form-group">
+            <label for="">Max Occupants</label>
+            <input type="text" class="form-control" name="officeMaxOccupants" [(ngModel)]="officeView.MaxOccupants">
+        </div>
+        <div class="form-group">
+            <label for="">Color</label>
+            <input type="text" class="form-control" name="officeColor" [(ngModel)]="officeView.Color">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+</div>
