@@ -1,6 +1,6 @@
 export interface Staff {
-    Id: string;
-    OfficeId: String;
-    FirstName: string;
-    LastName: string;
+    id: string;
+    officeId: String;
+    firstName: string;
+    lastName: string;
 }

@@ -26,21 +26,21 @@ export class OfficeService {
   };
 
   viewOffice(id): Observable<Office> {
-    const url = "http://localhost:3000/officeDetails?Id=";
+    const url = "http://localhost:3000/officeDetails?id=";
     return this._http.get<Office>(url + id).pipe(
       catchError(this.errorHandler)
     );
   };
 
   updateOffice(id, officeBody): Observable<Office> {
-    const url = "http://localhost:3000/officeDetails?Id=";
+    const url = "http://localhost:3000/officeDetails/";
     return this._http.put<Office>(url + id, officeBody).pipe(
       catchError(this.errorHandler)
     );
   }
 
   deleteOffice(id): Observable<Office> {
-    const url = "http://localhost:3000/officeDetails?Id=";
+    const url = "http://localhost:3000/officeDetails/";
     return this._http.delete<Office>(url + id).pipe(
       catchError(this.errorHandler)
     );

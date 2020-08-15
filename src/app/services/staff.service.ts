@@ -12,7 +12,7 @@ export class StaffService {
   constructor(private _http: HttpClient) { }
 
   getStaffData(id): Observable<Staff> {
-    const url = 'http://localhost:3000/staffDetails?OfficeId=';
+    const url = 'http://localhost:3000/staffDetails?officeId=';
     return this._http.get<Staff>(url + id);
   };
 
@@ -22,12 +22,12 @@ export class StaffService {
   };
 
   updateStaff(id, staffBody): Observable<Staff> {
-    const url = "http://localhost:3000/staffDetails?Id=";
+    const url = "http://localhost:3000/staffDetails/";
     return this._http.put<Staff>(url + id, staffBody);
   }
 
   deleteStaff(id): Observable<Staff> {
-    const url = "http://localhost:3000/officeDetails?Id=";
+    const url = "http://localhost:3000/officeDetails/";
     return this._http.delete<Staff>(url + id);
   };
 }

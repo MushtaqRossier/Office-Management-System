@@ -23,13 +23,13 @@ export class CreateOfficeComponent implements OnInit {
   addNewOffice(form) {
 
     let officeForm = {
-      Id: this.result,
-      Name: form.value.officeName,
-      Location: form.value.officeLocation,
-      Email: form.value.officeEmail,
-      TellNumber: form.value.officeTellNumber,
-      MaxOccupants: form.value.officeMaxOccupants,
-      Color: form.value.officeColor
+      id: this.result,
+      name: form.value.officeName,
+      location: form.value.officeLocation,
+      email: form.value.officeEmail,
+      tellNumber: form.value.officeTellNumber,
+      maxOccupants: form.value.officeMaxOccupants,
+      color: form.value.officeColor
     }
 
     this.officeService.createOffice(officeForm).subscribe(data => {

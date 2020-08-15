@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Office } from 'src/app/models/office-model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OfficeService } from 'src/app/services/office.service';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-update-office',
@@ -12,39 +13,55 @@ import { NgForm } from '@angular/forms';
 export class UpdateOfficeComponent implements OnInit {
 
   officeId = "";
-  officeView: Office;
+  office: Office;
   form: NgForm;
 
-  constructor(private activeRoute: ActivatedRoute ,private officeService: OfficeService) { }
+  newOfficeForm = this.fb.group({
+    name: [''],
+    location: [''],
+    email: [''],
+    tellNumber: [''],
+    maxOccupants: [''],
+    color: ['']
+  });
+
+  constructor(private activeRoute: ActivatedRoute ,private officeService: OfficeService, private fb: FormBuilder,
+    private router: Router)
+   { }
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe(data => {
       this.officeId = data.id;
+      console.log(this.officeId)
     });
 
+    // Fetching office data as observable
     this.officeService.viewOffice(this.officeId).subscribe(data => {
-      this.officeView = data;  // Get the exisiting data of the office
-      console.log(this.officeView)
-    });
+      this.office = data;
+      console.log(this.office);
+
+      // Displaying office data on form
+      this.newOfficeForm.patchValue({
+        name: data[0].name,
+        location: data[0].location,
+        email: data[0].email,
+        tellNumber: data[0].tellNumber,
+        maxOccupants: data[0].maxOccupants,
+        color: data[0].color
+      })
+    })
   };
 
-  updateOffice(form) {
+  updateOffice() {
 
-    console.log(form);
+    console.log(this.newOfficeForm.value);
 
-    const officeForm = {
-      Id: this.officeId,
-      Name: form.value.Name,
-      Location: form.value.Location,
-      Email: form.value.Email,
-      TellNumber: form.value.TellNumber,
-      MaxOccupants: form.value.MaxOccupants,
-      Color: form.value.Color
-    }
 
-    this.officeService.updateOffice(this.officeId, officeForm).subscribe(data => {
+    this.officeService.updateOffice(this.officeId, this.newOfficeForm.value).subscribe(data => {
       console.log(data);
     });
+
+    this.router.navigateByUrl('home');
   }
 
 }

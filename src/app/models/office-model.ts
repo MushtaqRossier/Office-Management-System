@@ -1,9 +1,9 @@
 export interface Office {
-    Id: string;
-    Name: string;
-    Location: string;
-    Email: string;
-    TellNumber: string;
-    MaxOccupants: number;
-    Color: string;
+    id: string;
+    name: string;
+    location: string;
+    email: string;
+    tellNumber: string;
+    maxOccupants: number;
+    color: string;
 }

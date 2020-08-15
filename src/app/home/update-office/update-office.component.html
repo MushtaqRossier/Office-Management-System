@@ -1,31 +1,36 @@
 <div class="container mb-5">
-    <form (submit)="updateOffice(officeForm)" #officeForm="ngForm">
+    <form [formGroup]="newOfficeForm" (submit)="updateOffice()">
         <div class="form-group">
             <label for="">Name</label>
-            <input type="text" class="form-control" name="officeName" [(ngModel)]="officeView.Name">
+            <input type="text" class="form-control" name="name" formControlName="name">
         </div>
         <div class="form-group">
             <label for="">Location</label>
-            <input type="text" class="form-control" name="officeLocation" [(ngModel)]="officeView.Location">
+            <input type="text" class="form-control" name="location" formControlName="location">
         </div>
         <div class="form-group">
             <label for="">Email</label>
-            <input type="text" class="form-control" name="officeEmail" [(ngModel)]="officeView.Email">
+            <input type="text" class="form-control" name="email" formControlName="email">
         </div>
         <div class="form-group">
             <label for="">Tell Number</label>
-            <input type="text" class="form-control" name="officeTellNumber" [(ngModel)]="officeView.TellNumber">
+            <input type="text" class="form-control" name="tellNumber" formControlName="tellNumber">
         </div>
         <div class="form-group">
             <label for="">Max Occupants</label>
-            <input type="text" class="form-control" name="officeMaxOccupants" [(ngModel)]="officeView.MaxOccupants">
+            <input type="text" class="form-control" name="maxOccupants" formControlName="maxOccupants">
         </div>
         <div class="form-group">
             <label for="">Color</label>
-            <input type="text" class="form-control" name="officeColor" [(ngModel)]="officeView.Color">
+            <input type="text" class="form-control" name="color" formControlName="color">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Update</button>
         </div>
+
+        <p>
+            Form Value: {{ newOfficeForm.value | json}}
+            Form Status: {{ newOfficeForm.status }}
+        </p>
     </form>
 </div>
