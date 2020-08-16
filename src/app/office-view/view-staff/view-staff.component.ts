@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ViewStaffComponent implements OnInit {
 
+  // Declaring variables
   officeId = "";
   staffId = "";
   officeView: Office;
@@ -26,11 +27,11 @@ export class ViewStaffComponent implements OnInit {
     });
 
     this.officeService.viewOffice(this.officeId).subscribe(data => {
-      this.officeView = data;
+      this.officeView = data; // Returns specific office data due to unique office id
     })
 
     this.staffService.getStaffData(this.staffId).subscribe(data => {
-      this.staffList = data;
+      this.staffList = data; // Returns staff data that has same unique office id as the company
     });
 
   }

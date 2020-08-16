@@ -9,10 +9,12 @@ import { OfficeService } from 'src/app/services/office.service';
 })
 export class DeleteOfficeComponent implements OnInit {
 
+  // Declaring variables
   officeId = "";
 
   constructor(private activeRoute: ActivatedRoute ,private officeService: OfficeService, private router: Router) { }
 
+  // Once page loads, office Id is captured and office gets removed from json-server
   ngOnInit(): void {
     this.activeRoute.params.subscribe(data => {
       this.officeId = data.id;

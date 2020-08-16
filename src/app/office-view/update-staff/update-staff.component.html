@@ -1,1 +1,17 @@
-<p>update-staff works!</p>
+<!-- Form Template -->
+<div class="container mb-5">
+    <form [formGroup]="newStaffForm" (submit)="updateStaff()">
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" class="form-control" name="firstName" formControlName="firstName">
+        </div>
+        <div class="form-group">
+            <label for="">Location</label>
+            <input type="text" class="form-control" name="lastName" formControlName="lastName">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+</div>
+

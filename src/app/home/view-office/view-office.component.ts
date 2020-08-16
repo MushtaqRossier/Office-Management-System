@@ -16,7 +16,7 @@ export class ViewOfficeComponent implements OnInit {
 
   ngOnInit(): void {
     this.officeService.getAllOffices().subscribe(data => {
-      this.officeList = data;
+      this.officeList = data;  // Returns office data as observable
     });
 
   }

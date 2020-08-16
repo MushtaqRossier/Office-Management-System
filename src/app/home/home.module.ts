@@ -7,9 +7,6 @@ import { UpdateOfficeComponent } from './update-office/update-office.component';
 import { ViewOfficeComponent } from './view-office/view-office.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
-
 @NgModule({
   declarations: [CreateOfficeComponent, DeleteOfficeComponent, UpdateOfficeComponent, ViewOfficeComponent],
   imports: [

@@ -12,10 +12,12 @@ import { Observable } from 'rxjs';
 })
 export class UpdateOfficeComponent implements OnInit {
 
+  // Declaring variables
   officeId = "";
   office: Office;
   form: NgForm;
 
+  // FormBuilder template
   newOfficeForm = this.fb.group({
     name: [''],
     location: [''],
@@ -40,18 +42,19 @@ export class UpdateOfficeComponent implements OnInit {
       this.office = data;
       console.log(this.office);
 
-      // Displaying office data on form
-      this.newOfficeForm.patchValue({
-        name: data[0].name,
-        location: data[0].location,
-        email: data[0].email,
-        tellNumber: data[0].tellNumber,
-        maxOccupants: data[0].maxOccupants,
-        color: data[0].color
-      })
+    // Displaying office data on form
+    this.newOfficeForm.patchValue({
+      name: data[0].name,
+      location: data[0].location,
+      email: data[0].email,
+      tellNumber: data[0].tellNumber,
+      maxOccupants: data[0].maxOccupants,
+      color: data[0].color
     })
+  })
   };
 
+  // Method that updates office details
   updateOffice() {
 
     console.log(this.newOfficeForm.value);

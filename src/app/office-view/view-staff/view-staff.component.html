@@ -2,7 +2,7 @@
 <div class="ui card" *ngFor="let office of officeView">
     <div class="content">
       <div class="header ml-auto">
-          <button class="ui labeled icon button">
+          <button class="ui labeled icon button" routerLink="/home">
             <i class="left arrow icon"></i>
             Back
           </button>
@@ -27,12 +27,12 @@
 </div>
 
 <!-- Menu -->
-<div class="ui menu">
+<div class="ui menu" *ngFor="let office of officeView">
     <div class="header item">
         Staff Members 8/9
     </div>
     <div class="item ml-auto">
-        <button class="btn btn-primary">Add Staff</button>
+        <button class="btn btn-primary" routerLink='/office/create-staff/{{office.id}}'>Add Staff</button>
     </div>
 </div>
 
@@ -40,11 +40,11 @@
 <div class="ui middle aligned divided list">
     <div class="item" *ngFor="let staff of staffList">
       <div class="right floated content">
-        <button class="ui labeled icon green button">
+        <button class="ui labeled icon green button" routerLink='/office/update-staff/{{staff.id}}'>
             <i class="edit icon"></i>
             Edit
           </button>
-          <button class="ui right labeled icon red button">
+          <button class="ui right labeled icon red button" routerLink='/office/delete-staff/{{staff.id}}'>
             <i class="delete icon"></i>
             Delete
           </button>

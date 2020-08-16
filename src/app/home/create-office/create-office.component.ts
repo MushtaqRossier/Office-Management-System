@@ -10,16 +10,18 @@ import { Router } from '@angular/router';
 })
 export class CreateOfficeComponent implements OnInit {
 
+  // Declaring variables
   result: string;
   form: NgForm;
+  staffOfficeId: string;
 
   constructor(private officeService: OfficeService, private router: Router) { }
 
   ngOnInit(): void {
-    this.result = Math.random().toString(36).substr(2, 5);
-    console.log(this.result);
+    this.result = Math.random().toString(36).substr(2, 5);  // Generates random unique string
   }
 
+  // Method that accepts form data and sends it to json-server
   addNewOffice(form) {
 
     let officeForm = {
@@ -32,10 +34,11 @@ export class CreateOfficeComponent implements OnInit {
       color: form.value.officeColor
     }
 
+    this.staffOfficeId = this.result;
+
     this.officeService.createOffice(officeForm).subscribe(data => {
       console.log(data);
     })
-    console.log(officeForm);
     console.log('Office created!');
     this.router.navigateByUrl('home');
 

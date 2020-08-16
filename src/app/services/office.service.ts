@@ -11,6 +11,7 @@ export class OfficeService {
 
   constructor(private _http: HttpClient) { }
 
+  // Gets all office data form json-server
   getAllOffices(): Observable<Office> {
     const url = "http://localhost:3000/officeDetails";
     return this._http.get<Office>(url).pipe(
@@ -18,6 +19,7 @@ export class OfficeService {
     );
   };
 
+  // Posts new office data to json-server
   createOffice(officeBody): Observable<Office> {
     const url = "http://localhost:3000/officeDetails";
     return this._http.post<Office>(url, officeBody).pipe(
@@ -25,6 +27,7 @@ export class OfficeService {
     );
   };
 
+  // Views id-specific office data from json-server
   viewOffice(id): Observable<Office> {
     const url = "http://localhost:3000/officeDetails?id=";
     return this._http.get<Office>(url + id).pipe(
@@ -32,6 +35,8 @@ export class OfficeService {
     );
   };
 
+
+  // Updates id-specific office data from json-server
   updateOffice(id, officeBody): Observable<Office> {
     const url = "http://localhost:3000/officeDetails/";
     return this._http.put<Office>(url + id, officeBody).pipe(
@@ -39,6 +44,7 @@ export class OfficeService {
     );
   }
 
+  // Deletes id-specific office data from json-server
   deleteOffice(id): Observable<Office> {
     const url = "http://localhost:3000/officeDetails/";
     return this._http.delete<Office>(url + id).pipe(
@@ -46,6 +52,7 @@ export class OfficeService {
     );
   };
 
+  // Displays error message in console
   errorHandler(error) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {

@@ -17,15 +17,18 @@
       "maxOccupants": 9,
       "color": "blue",
       "id": "Bc75d"
+    },
+    {
+      "id": "zbond",
+      "name": "Microsoft",
+      "location": "1st floor, Newlink Building, 1 New Street, Paarl, 4696",
+      "email": "info@microsoft.com",
+      "tellNumber": "0721125541",
+      "maxOccupants": "5",
+      "color": "Black"
     }
   ],
   "staffDetails": [
-    {
-      "id": "Ef921",
-      "officeId": "Ae65t",
-      "firstName": "Mushtaq",
-      "lastName": "Rossier"
-    },
     {
       "id": "863Ee",
       "officeId": "Bc75d",
@@ -34,9 +37,21 @@
     },
     {
       "id": "2r3uA",
-      "officeId": "Cb81e",
+      "officeId": "zbond",
       "firstName": "Qaasim",
       "lastName": "Hendricks"
+    },
+    {
+      "id": "ez7u0",
+      "officeId": "Bc75d",
+      "firstName": "Yusrah",
+      "lastName": "Schroeder"
+    },
+    {
+      "officeId": "Ae65t",
+      "firstName": "Mushtaq ",
+      "lastName": "Rossier",
+      "id": "f5b0c"
     }
   ]
 }
