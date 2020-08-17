@@ -1,10 +1,12 @@
 # Specno-OMS
 
-Angular application that allows users to create and manage office space,
+Angular application that allows users to create and manage office space.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
 
 ## Development server
+
+Run `npm run server` to access mock REST API with JSON-server before launching web application.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
