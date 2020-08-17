@@ -1,5 +1,6 @@
 <!-- Office Details -->
-<div class="ui card" *ngFor="let office of officeView">
+<div class="container">
+  <div class="ui card" *ngFor="let office of officeView">
     <div class="content">
       <div class="header ml-auto">
           <button class="ui labeled icon button" routerLink="/home">
@@ -15,30 +16,36 @@
       <h4 class="ui sub header">{{office.tellNumber}}</h4>
       <h4 class="ui sub header">{{office.maxOccupants}}</h4>
     </div>
+  </div>
 </div>
 
-<!-- Search Bar -->
-<div class="ui search">
+<!-- Filtered Search Bar -->
+<div class="container">
+  <div class="ui search">
     <div class="ui icon input">
-      <input class="prompt" type="text" placeholder="Search employee...">
+      <input type="text" placeholder="Search employee..." [(ngModel)]="term">
       <i class="search icon"></i>
     </div>
     <div class="results"></div>
+  </div>
 </div>
 
 <!-- Menu -->
-<div class="ui menu" *ngFor="let office of officeView">
+<div class="container">
+  <div class="ui menu" *ngFor="let office of officeView">
     <div class="header item">
         Staff Members 8/9
     </div>
     <div class="item ml-auto">
         <button class="btn btn-primary" routerLink='/office/create-staff/{{office.id}}'>Add Staff</button>
     </div>
+  </div>
 </div>
 
 <!-- Staff List -->
-<div class="ui middle aligned divided list">
-    <div class="item" *ngFor="let staff of staffList">
+<div class="container">
+  <div class="ui middle aligned divided list">
+    <div class="item" *ngFor="let staff of staffList | filter:term">
       <div class="right floated content">
         <button class="ui labeled icon green button" routerLink='/office/update-staff/{{staff.id}}'>
             <i class="edit icon"></i>
@@ -54,6 +61,7 @@
         {{staff.firstName}} {{staff.lastName}}
       </div>
     </div>
+</div>
     
 
 

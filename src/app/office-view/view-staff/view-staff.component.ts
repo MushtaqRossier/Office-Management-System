@@ -13,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ViewStaffComponent implements OnInit {
 
   // Declaring variables
+  term = "";
   officeId = "";
   staffId = "";
   officeView: Office;
