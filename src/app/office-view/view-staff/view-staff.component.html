@@ -1,20 +1,19 @@
 <!-- Office Details -->
 <div class="container">
-  <div class="ui card" *ngFor="let office of officeView">
+  <div class="ui card custom-border" *ngFor="let office of officeView">
     <div class="content">
       <div class="header ml-auto">
-          <button class="ui labeled icon button" routerLink="/home">
+          <button class="ui tiny icon button" routerLink="/home">
             <i class="left arrow icon"></i>
-            Back
           </button>
-          {{office.name}} 
+          <span class="header-text">{{office.name}}</span> 
         </div>
     </div>
-    <div class="content">
-      <h4 class="ui sub header">{{office.location}}</h4>
-      <h4 class="ui sub header">{{office.email}}</h4>
-      <h4 class="ui sub header">{{office.tellNumber}}</h4>
-      <h4 class="ui sub header">{{office.maxOccupants}}</h4>
+    <div class="content office-info">
+      <h4 class="ui sub header">Address: {{office.location}}</h4>
+      <h4 class="ui sub header">Email: {{office.email}}</h4>
+      <h4 class="ui sub header">Tell Number: {{office.tellNumber}}</h4>
+      <h4 class="ui sub header">Max Occupants: {{office.maxOccupants}}</h4>
     </div>
   </div>
 </div>
@@ -34,10 +33,10 @@
 <div class="container">
   <div class="ui menu" *ngFor="let office of officeView">
     <div class="header item">
-        Staff Members 8/9
+        Staff Members 8/{{office.maxOccupants}}
     </div>
     <div class="item ml-auto">
-        <button class="btn btn-primary" routerLink='/office/create-staff/{{office.id}}'>Add Staff</button>
+        <button class="btn btn-primary" routerLink='/office/create-staff/{{office.id}}'>ADD STAFF</button>
     </div>
   </div>
 </div>
@@ -47,16 +46,16 @@
   <div class="ui middle aligned divided list">
     <div class="item" *ngFor="let staff of staffList | filter:term">
       <div class="right floated content">
-        <button class="ui labeled icon green button" routerLink='/office/update-staff/{{staff.id}}'>
+        <button class="ui tiny labeled icon green button" routerLink='/office/update-staff/{{staff.id}}'>
             <i class="edit icon"></i>
             Edit
           </button>
-          <button class="ui right labeled icon red button" routerLink='/office/delete-staff/{{staff.id}}'>
+          <button class="ui tiny right labeled icon red button" routerLink='/office/delete-staff/{{staff.id}}'>
             <i class="delete icon"></i>
             Delete
           </button>
       </div>
-      <img class="ui avatar image">
+      <i class="user circle icon"></i>
       <div class="content">
         {{staff.firstName}} {{staff.lastName}}
       </div>

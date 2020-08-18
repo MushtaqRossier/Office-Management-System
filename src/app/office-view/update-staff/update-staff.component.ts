@@ -3,6 +3,7 @@ import { Staff } from 'src/app/models/staff-model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StaffService } from 'src/app/services/staff.service';
 import { NgForm, FormBuilder, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-update-staff',
@@ -25,7 +26,7 @@ export class UpdateStaffComponent implements OnInit {
 
 
   constructor(private activeRoute: ActivatedRoute, private route: Router, private staffService: StaffService,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder, private location:Location) { }
 
   // Once page loads, it dispalys staff data on form template to update 
   ngOnInit(): void {
@@ -54,7 +55,11 @@ export class UpdateStaffComponent implements OnInit {
       console.log(data);
     });
 
-    this.route.navigateByUrl('home');
+    this.location.back();
+  }
+
+  goBack() {
+    this.location.back();
   }
 
 }

@@ -21,10 +21,16 @@ export class DeleteOfficeComponent implements OnInit {
       console.log(this.officeId)
     });
 
-    this.officeService.deleteOffice(this.officeId).subscribe(data => {
-      console.log('Office deleted!')
+    let choice = confirm("Are you sure you want to remove?")
+
+    if (choice === true) {
+      this.officeService.deleteOffice(this.officeId).subscribe(data => {
+        console.log('Office deleted!')
+        this.router.navigateByUrl('home');
+      });
+    }else {
       this.router.navigateByUrl('home');
-    })
+    }
   }
 
 }

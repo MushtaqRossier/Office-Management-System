@@ -18,20 +18,21 @@
 <!--  Office containers -->
 <div class="container pt-4 pb-4" >
     <div class="row pb-5" *ngFor="let office of officeList">
-      <div class="col-sm-2 rounded-left border border-dark">
-        1 of 3
+      <div class="col-sm-2 rounded-left custom-border" style="text-align: center;">
+        <i class="users icon people-icon"></i>
+        <p class="emp-number">1/{{office.maxOccupants}}</p>
       </div>
-      <div class="col-sm-8 border border-dark rounded-right">
+      <div class="col-sm-8 rounded-right custom-border">
         <div class="row pl-4">
             <h3>
                 <a routerLink="/office/view-staff/{{office.id}}">{{office.name}}</a>
             </h3>
             <div class="ml-auto">
-                <button class="ui labeled icon green button" routerLink='/update-office/{{office.id}}'>
+                <button class="ui tiny labeled icon green button" routerLink='/update-office/{{office.id}}'>
                     <i class="edit icon"></i>
                     Edit
                   </button>
-                  <button class="ui right labeled icon red button" routerLink='/delete-office/{{office.id}}'>
+                  <button class="ui tiny right labeled icon red button" routerLink='/delete-office/{{office.id}}'>
                     <i class="delete icon"></i>
                     Delete
                   </button>

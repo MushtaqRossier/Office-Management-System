@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { OfficeService} from 'src/app/services/office.service';
 import { Office } from 'src/app/models/office-model';
 
@@ -10,9 +10,9 @@ import { Office } from 'src/app/models/office-model';
 })
 export class ViewOfficeComponent implements OnInit {
 
-  constructor(private officeService: OfficeService) { }
-
   officeList: Office;
+
+  constructor(private officeService: OfficeService) { }
 
   ngOnInit(): void {
     this.officeService.getAllOffices().subscribe(data => {

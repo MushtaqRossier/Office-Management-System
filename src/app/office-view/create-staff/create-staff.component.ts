@@ -3,6 +3,7 @@ import { StaffService } from 'src/app/services/staff.service';
 import { FormGroup, NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Staff } from 'src/app/models/staff-model';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class CreateStaffComponent implements OnInit {
   staffData: Staff;
   form: NgForm;
 
-  constructor(private activeRoute: ActivatedRoute ,private staffService: StaffService, private router: Router) { }
+  constructor(private activeRoute: ActivatedRoute ,private staffService: StaffService, private router: Router,
+    private location: Location) { }
 
   ngOnInit(): void {
     this.result = Math.random().toString(36).substr(2, 5);  // Generates random unique string id
@@ -47,7 +49,11 @@ export class CreateStaffComponent implements OnInit {
     });
 
     console.log('Staff created!');
-    this.router.navigateByUrl('home');
+    this.location.back();
+  }
+
+  goBack() {
+    this.location.back();
   }
 
 }
