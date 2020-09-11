@@ -58,3 +58,7 @@ button.btn.btn-primary{
     letter-spacing: 1px;
 }
 
+.btn.btn-success {
+    margin-right: 5px;
+}
+

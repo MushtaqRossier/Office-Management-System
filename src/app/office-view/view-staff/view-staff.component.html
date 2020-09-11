@@ -46,12 +46,10 @@
   <div class="ui middle aligned divided list">
     <div class="item" *ngFor="let staff of staffList | filter:term">
       <div class="right floated content">
-        <button class="ui tiny labeled icon green button" routerLink='/office/update-staff/{{staff.id}}'>
-            <i class="edit icon"></i>
+        <button class="btn btn-success btn-sm" routerLink='/office/update-staff/{{staff.id}}'>
             Edit
           </button>
-          <button class="ui tiny right labeled icon red button" routerLink='/office/delete-staff/{{staff.id}}'>
-            <i class="delete icon"></i>
+          <button class="btn btn-danger btn-sm" routerLink='/office/delete-staff/{{staff.id}}'>
             Delete
           </button>
       </div>

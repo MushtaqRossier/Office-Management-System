@@ -19,6 +19,7 @@ export class ViewStaffComponent implements OnInit {
   officeView: Office;
   staffList: Staff;
 
+
   constructor(private activeRoute: ActivatedRoute ,private officeService: OfficeService, private staffService: StaffService) { }
 
   ngOnInit(): void {

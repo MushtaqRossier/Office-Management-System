@@ -28,12 +28,10 @@
                 <a routerLink="/office/view-staff/{{office.id}}">{{office.name}}</a>
             </h3>
             <div class="ml-auto">
-                <button class="ui tiny labeled icon green button" routerLink='/update-office/{{office.id}}'>
-                    <i class="edit icon"></i>
+                <button class="btn btn-success btn-sm" routerLink='/update-office/{{office.id}}'>
                     Edit
                   </button>
-                  <button class="ui tiny right labeled icon red button" routerLink='/delete-office/{{office.id}}'>
-                    <i class="delete icon"></i>
+                  <button class="btn btn-danger btn-sm" routerLink='/delete-office/{{office.id}}'>
                     Delete
                   </button>
               </div>

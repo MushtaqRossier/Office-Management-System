@@ -45,3 +45,7 @@
 .rounded-right {
     border-radius: 10px!important;
 }
+
+.btn.btn-success {
+    margin-right: 5px;
+}
