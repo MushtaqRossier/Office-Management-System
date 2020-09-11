@@ -1,3 +1,7 @@
+# Important
+
+I wasn't able to display the dynamic employee count on the home page. The home page displays a fixed amount for the employee count.
+
 # Specno-OMS
 
 Angular application that allows users to create and manage office space.
